@@ -28,8 +28,8 @@ t f_virtual(PVOID f_base, __int64 f_index)
 {
 	return (*(t**)f_base)[f_index / 8];
 }
-#define STATIC_SSGE_Ru									0x141CBBE90		// ai_CompatibilityMode
-#define STATIC_IGameFramework_Ru        				0x141FC5768			// Failed to create the GameFramework Interface!
+#define STATIC_SSGE_Ru									0x141D132D0		// ai_CompatibilityMode
+#define STATIC_IGameFramework_Ru        				0x14201CD18			// Failed to create the GameFramework Interface!
 #define STATIC_SSGE									0x141CBBFB0			// ai_CompatibilityMode 
 #define STATIC_IGameFramework        				0x141FC5818			// Failed to create the GameFramework Interface! 140FB3239
 class SSGE
