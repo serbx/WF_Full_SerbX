@@ -28,10 +28,9 @@ t f_virtual(PVOID f_base, __int64 f_index)
 {
 	return (*(t**)f_base)[f_index / 8];
 }
-#define STATIC_SSGE_Ru									0x141D132D0		// ai_CompatibilityMode
-#define STATIC_IGameFramework_Ru        				0x14201CD18			// Failed to create the GameFramework Interface!
-#define STATIC_SSGE									0x141CBBFB0			// ai_CompatibilityMode 
-#define STATIC_IGameFramework        				0x141FC5818			// Failed to create the GameFramework Interface! 140FB3239
+#define STATIC_SSGE									0x141D132D0		// ai_CompatibilityMode
+#define STATIC_IGameFramework        				0x14201CD18			// Failed to create the GameFramework Interface!
+
 class SSGE
 {
 public:
@@ -48,7 +47,7 @@ public:
 
 	ITimer* pGetITimer() { return *(ITimer**)((DWORD64)this + 0xB8); };
 
-	SSGE* GetSSGE() {return *(SSGE**)(STATIC_SSGE_Ru);}
+	SSGE* GetSSGE() {return *(SSGE**)(STATIC_SSGE);}
 
 	gameMEM* getGM() {
 		return *(gameMEM**)((DWORD64)this + 0xC0);
@@ -301,7 +300,7 @@ public:
 	}
 	
 	static IGFW* GetGameFramework() {//The highlited dword_... is the IGameFramework address.
-		return *(IGFW**)STATIC_IGameFramework_Ru; //search Failed to create the GameFramework Interface!
+		return *(IGFW**)STATIC_IGameFramework; //search Failed to create the GameFramework Interface!
 	}
 
 	IGameRules* GetIGameRules() { return f_virtual<IGameRules * (__thiscall*)(PVOID)>(this, 0x448)(this);
